@@ -28,6 +28,20 @@ var albumPicasso = {
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+ var infectedMushrooms = {
+     title: 'Army Of Mushrooms',
+     artist: 'Infected Mushrooms',
+     label: 'EM',
+     year: '2012',
+     albumArtUrl: 'assets/images/album_covers/22.png',
+     songs: [
+         { title: 'Nevermind', duration: '1:01' },
+         { title: 'Send me an Angel', duration: '5:01' },
+         { title: 'Nothing to Say', duration: '3:21'},
+         { title: 'The Rat', duration: '3:14' },
+         { title: 'You are screwed', duration: '2:15'}
+     ]
+ };
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -60,8 +74,8 @@ var setCurrentAlbum = function(album) {
      for (var i = 0; i < album.songs.length; i++) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
- };
+}
  
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
+     setCurrentAlbum (albumPicasso);
  };
