@@ -59,7 +59,6 @@ var albumPicasso = {
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
 var setCurrentAlbum = function(album) {
      // #2
      albumTitle.firstChild.nodeValue = album.title;
