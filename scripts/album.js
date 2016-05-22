@@ -42,7 +42,17 @@ var albumPicasso = {
          { title: 'You are screwed', duration: '2:15'}
      ]
  };
-var setCurrentAlbum = function(album) {
+ var createSongRow = function(songNumber, songName, songLength) {
+     var template =
+        '<tr class="album-view-song-item">'
+      + '  <td class="song-item-number">' + songNumber + '</td>'
+      + '  <td class="song-item-title">' + songName + '</td>'
+      + '  <td class="song-item-duration">' + songLength + '</td>'
+      + '</tr>'
+      ;
+ 
+     return template;
+ };
      // #1
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
@@ -50,6 +60,7 @@ var setCurrentAlbum = function(album) {
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
  
+var setCurrentAlbum = function(album) {
      // #2
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
@@ -66,22 +77,10 @@ var setCurrentAlbum = function(album) {
 }
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
-var createSongRow = function(songNumber, songName, songLength) {
-     var template =
-        '<tr class="album-view-song-item">'
-      + '  <td class="song-item-number">' + songNumber + '</td>'
-      + '  <td class="song-item-title">' + songName + '</td>'
-      + '  <td class="song-item-duration">' + songLength + '</td>'
-      + '</tr>'
-      ;
- 
-     return template;
- };
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
 
      songListContainer.addEventListener('mouseover', function(event) {
-         // #1
          console.log(event.target);
      });
- }:
+ };
