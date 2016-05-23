@@ -28,7 +28,7 @@ var albumPicasso = {
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
- var infectedMushrooms = {
+ var albumInfectedMushrooms = {
      title: 'Army Of Mushrooms',
      artist: 'Infected Mushrooms',
      label: 'EM',
@@ -74,12 +74,17 @@ var setCurrentAlbum = function(album) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
 }
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+          songListContainer.addEventListener('mouseover', function(event) {
+         // #1
+         console.log(event.target);
+     });
      var albums = [albumPicasso, albumMarconi,albumInfectedMushrooms];
      var index = 2;
      albumImage.addEventListener('click', function(event) {
-     setCurrentAlbum(albums)[index]);
+     setCurrentAlbum(albums[index]);
                  index++;
 		         if (index == albums.length) {
 		             index = 0;
